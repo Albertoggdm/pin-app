@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #098375;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.keypad-container {
+  width: 500px;
+}
+
+.ui.input.pin-input > input,
+.ui.input.pin-input > input:focus {
+  color: transparent;
+  text-shadow: 0 0 0 #282c34;
+  letter-spacing: 70px;
+  width: 500px;
+  padding-left: 75px;
+}
+
+.error-message {
+  height: 20px;
+  font-size: 20px;
+  color: firebrick;
+  font-weight: bold;
+  margin-top: 20px;
 }
