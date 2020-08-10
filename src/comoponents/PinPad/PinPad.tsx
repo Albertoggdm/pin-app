@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { Input } from 'semantic-ui-react';
 
 import ButtonsArea from '../ButtonsArea/ButtonsArea';
+import FinalMessage from '../FinalMessage/FinalMessage';
+
 import {
   DEFAULT_PASS,
   PIN_SPACES,
@@ -93,7 +95,7 @@ const PinPad: React.FC<IPinPadProps> = ({ pass = correctCombination }) => {
     <div>
       <div>{locked ? MESSAGE.LOCKED : MESSAGE.UNLOCKED}</div>
       <br />
-      {locked && (
+      {locked ? (
         <>
           <div>
             <Input
@@ -115,6 +117,8 @@ const PinPad: React.FC<IPinPadProps> = ({ pass = correctCombination }) => {
             counter={counter}
           />
         </>
+      ) : (
+        <FinalMessage />
       )}
     </div>
   );
