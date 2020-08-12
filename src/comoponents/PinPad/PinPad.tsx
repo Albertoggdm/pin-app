@@ -49,7 +49,7 @@ const PinPad: React.FC<IPinPadProps> = ({ pass = correctCombination }) => {
     }
   };
 
-  const onChangePin = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangePinHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newVal = event.target.value;
     if (
       (/^-{0,1}\d+$/.test(newVal) && newVal.length <= PIN_SPACES) ||
@@ -104,9 +104,10 @@ const PinPad: React.FC<IPinPadProps> = ({ pass = correctCombination }) => {
               type="password"
               value={pin}
               autoFocus={true}
-              onChange={onChangePin}
+              onChange={onChangePinHandler}
               onKeyDown={onHandleKeyDown}
               placeholder="----"
+              data-testid="pin-input"
             />
           </div>
           <div className="error-message">{error}</div>

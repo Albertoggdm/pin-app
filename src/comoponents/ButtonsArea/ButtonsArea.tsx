@@ -96,6 +96,7 @@ const ButtonsArea: React.FC<Props> = ({ onClickHandler, pin, counter }) => {
             value="0"
             onClick={onClickHandler}
             disabled={disableNumbers}
+            data-testid="btn0"
           />
           <Button
             content="Unlock"
